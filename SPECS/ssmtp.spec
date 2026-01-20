@@ -1,6 +1,6 @@
 Name:		ssmtp
 Version:	2.64
-Release:	14%{?dist}
+Release:	14.1%{?dist}
 Summary:	Extremely simple MTA to get mail off the system to a Mailhub
 Group:		Applications/Internet
 License:	GPLv2+
@@ -55,15 +55,7 @@ or manage a queue. That belongs on a mail hub with a system administrator.
 
 
 %prep
-%setup -q
-%patch1 -p1 -b .gplmd5
-%patch2 -p1 -b .garbage
-%patch8 -p1 -b .authpass
-%patch10 -p1 -b .aliases
-%patch11 -p1 -b .remote-ip
-%patch12 -p1 -b .tls
-
-%patch21 -p1 -b .saneconf
+%autosetup -p1
 
 %build
 %configure --enable-ssl --enable-md5auth --enable-inet6
@@ -139,6 +131,11 @@ fi
 
 
 %changelog
+* Tue Jan 20 2026 Philippe Coval <philippe.coval@vates.tech> - 2.64-14.1
+- Add gcc to BuildRequires
+- Update obsolete patch macro with autosetup
+- Rebuild for openssl-3
+
 * Mon Oct 13 2014 Manuel "lonely wolf" Wolfshant <wolfy@fedoraproject.org> - 2.64-14
 - Fix spurious permissions for config file ( #1060515)
 
