@@ -39,6 +39,7 @@ Provides:	MTA smtpdaemon
 #Provides:	%{_bindir}/mailq
 Requires(post):	%{_sbindir}/alternatives
 Requires(preun):	%{_sbindir}/alternatives
+BuildRequires:	gcc
 BuildRequires:	openssl-devel
 
 
