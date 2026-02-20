@@ -1,6 +1,6 @@
 Name:		ssmtp
 Version:	2.64
-Release:	14.1%{?dist}
+Release:	14.1~XCPNG2710.3%{?dist}
 Summary:	Extremely simple MTA to get mail off the system to a Mailhub
 Group:		Applications/Internet
 License:	GPLv2+
